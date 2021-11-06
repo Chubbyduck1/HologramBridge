@@ -37,6 +37,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <finalName>HologramBridge</finalName>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                             <shadedClassifierName>shaded</shadedClassifierName>
                         </configuration>
