@@ -3,3 +3,4 @@ Hologram Bridge is an API that is designed to work with multiple hologram plugin
 
 ### Implementation
 - [ ] Add Visibility Management
+- [ ] Add More Hologram Implementations
