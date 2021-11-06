@@ -1,0 +1,9 @@
+name: HologramBridge
+version: ${project.version}
+main: me.chubbyduck.holobridge.HologramBridgePlugin
+api-version: 1.16
+authors: [ Chubbyduck1 ]
+description: A bridge between Hologram plugins
+softdepend:
+    - HolographicDisplays
+    - CMI

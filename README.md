@@ -1,0 +1,37 @@
+# Holographic Bridge<br>
+[![](https://jitpack.io/v/StormTechnology/HologramBridge.svg)](https://jitpack.io/#StormTechnology/HologramBridge)<br>
+
+A bridge between hologram plugins created by **Chubbyduck1**
+
+# Supported Plugins<br>
+* HolographicDisplays
+* CMI
+
+# Warning<br>
+Some features of this bridge can be unstable. It is being worked on to be more stable.
+
+# Limitations<br>
+* Player Visibility not usable on HolographicDisplays
+
+# Starting the API<br>
+You can either run HologramBridge as a plugin, or shade it into your plugin.
+
+If you're shading it into your plugin, use the following to start it.
+```java
+new HologramBridge(JavaPlugin javaPlugin, boolean verbose);
+```
+
+# Creating A Hologram<br>
+```java
+final Hologram hologram = HologramAPI.createHologram(Location);
+```
+
+# Adding Lines<br>
+```java
+final Hologram hologram = HologramAPI.createHologram(Location);
+final ItemLine itemLine = hologram.appendItemLine(new ItemStack(Material.DIAMOND, 1));
+final TextLine textLine = hologram.appendTextLine("Hello!");
+```
+
+# License<br>
+This is licensed under MIT Licensing
