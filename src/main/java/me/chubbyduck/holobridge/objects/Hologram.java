@@ -32,6 +32,9 @@ public class Hologram {
     @Getter
     private final Object hologramObject;
 
+    @Getter
+    private final VisibilityManager visibilityManager;
+
     @Getter @Setter
     private Location location;
 
@@ -47,6 +50,7 @@ public class Hologram {
         this.connector = connector;
         this.hologramObject = hologramObject;
         this.location = location;
+        this.visibilityManager = new VisibilityManager(this);
     }
 
     /**

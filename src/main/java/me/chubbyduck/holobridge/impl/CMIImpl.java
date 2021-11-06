@@ -18,7 +18,9 @@ import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.lines.impl.ItemLine;
 import me.chubbyduck.holobridge.lines.impl.TextLine;
+import me.chubbyduck.holobridge.objects.VisibilityManager;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
@@ -88,6 +90,16 @@ public class CMIImpl implements Connector {
     @Override
     public void delete(Hologram hologram) {
         getHologram(hologram).remove();
+    }
+
+    @Override
+    public void showTo(VisibilityManager visibilityManager, Player player) {
+        // Not Possible With CMI as far as I know
+    }
+
+    @Override
+    public void hideTo(VisibilityManager visibilityManager, Player player) {
+        // Not Possible With CMI as far as I know
     }
 
     public CMIHologram getHologram(Hologram hologram) {

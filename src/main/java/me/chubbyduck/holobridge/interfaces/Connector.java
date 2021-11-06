@@ -14,7 +14,9 @@ package me.chubbyduck.holobridge.interfaces;
 
 import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.objects.Hologram;
+import me.chubbyduck.holobridge.objects.VisibilityManager;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 
 public interface Connector {
 
@@ -59,5 +61,19 @@ public interface Connector {
      * Delete a hologram
      */
     void delete(Hologram hologram);
+
+    /**
+     * Show a hologram to a player
+     * @param visibilityManager The {@link VisibilityManager} to use
+     * @param player The player
+     */
+    void showTo(VisibilityManager visibilityManager, Player player);
+
+    /**
+     * Hide a hologram from a player
+     * @param visibilityManager The {@link VisibilityManager} to use
+     * @param player The player
+     */
+    void hideTo(VisibilityManager visibilityManager, Player player);
 
 }

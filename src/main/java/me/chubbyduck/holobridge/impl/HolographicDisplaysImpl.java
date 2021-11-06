@@ -20,7 +20,9 @@ import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.lines.impl.ItemLine;
 import me.chubbyduck.holobridge.lines.impl.TextLine;
+import me.chubbyduck.holobridge.objects.VisibilityManager;
 import org.bukkit.Location;
+import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 public class HolographicDisplaysImpl implements Connector {
@@ -102,6 +104,24 @@ public class HolographicDisplaysImpl implements Connector {
     @Override
     public void delete(Hologram hologram) {
         getHologram(hologram).delete();
+    }
+
+    @Override
+    public void showTo(VisibilityManager visibilityManager, Player player) {
+        com.gmail.filoghost.holographicdisplays.api.Hologram hologram = getHologram(visibilityManager.getHologram());
+        com.gmail.filoghost.holographicdisplays.api.VisibilityManager hologramVisibilityManager
+                = hologram.getVisibilityManager();
+
+        hologramVisibilityManager.showTo(player);
+    }
+
+    @Override
+    public void hideTo(VisibilityManager visibilityManager, Player player) {
+        com.gmail.filoghost.holographicdisplays.api.Hologram hologram = getHologram(visibilityManager.getHologram());
+        com.gmail.filoghost.holographicdisplays.api.VisibilityManager hologramVisibilityManager
+                = hologram.getVisibilityManager();
+
+        hologramVisibilityManager.hideTo(player);
     }
 
     public com.gmail.filoghost.holographicdisplays.api.Hologram getHologram(Hologram hologram) {

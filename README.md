@@ -3,7 +3,7 @@
 [![Support Server](https://img.shields.io/discord/609145954926460928.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/y4xc5tNrbQ)
 
 # Hologram Bridge<br>
-A bridge between hologram plugins created by **Chubbyduck1**
+A bridge between hologram plugins created by **Chubbyduck1**. The API has been designed to have similar methods to HolographicDisplays.
 
 # Quick Links<br>
 * Supported Plugins: [Click Here](#supported-plugins)
