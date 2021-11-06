@@ -1,5 +1,6 @@
 # Holographic Bridge<br>
 [![](https://jitpack.io/v/StormTechnology/HologramBridge.svg)](https://jitpack.io/#StormTechnology/HologramBridge)<br>
+[![Support Server](https://img.shields.io/discord/609145954926460928.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/y4xc5tNrbQ)
 
 A bridge between hologram plugins created by **Chubbyduck1**
 
@@ -36,7 +37,8 @@ final TextLine textLine = hologram.appendTextLine("Hello!");
 # Download</br>
 Latest Version: [GitHub Release](https://github.com/DV8FromTheWorld/JDA/releases/latest)
 Latest Version:
-[ ![version][] ][download]
+[![GitHub release](https://img.shields.io/github/release/StormTechnology/HologramBridge.svg)](https://GitHub.com/StormTechnology/HologramBridge/releases/)
+
 
 Be sure to replace the **VERSION** key below with the version shown above!
 
