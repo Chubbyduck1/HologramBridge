@@ -33,5 +33,27 @@ final ItemLine itemLine = hologram.appendItemLine(new ItemStack(Material.DIAMOND
 final TextLine textLine = hologram.appendTextLine("Hello!");
 ```
 
+# Download</br>
+Latest Version: [GitHub Release](https://github.com/DV8FromTheWorld/JDA/releases/latest)
+Latest Version:
+[ ![version][] ][download]
+
+Be sure to replace the **VERSION** key below with the version shown above!
+
+**Maven**
+```xml
+<repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+</repository>
+```
+```xml
+<dependency>
+    <groupId>com.github.StormTechnology</groupId>
+    <artifactId>HologramBridge</artifactId>
+    <version>VERSION</version>
+</dependency>
+```
+
 # License<br>
 This is licensed under MIT Licensing
