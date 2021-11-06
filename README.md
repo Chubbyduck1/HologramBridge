@@ -7,11 +7,11 @@ A bridge between hologram plugins created by **Chubbyduck1**
 
 # Quick Links<br>
 * Supported Plugins: [Click Here](#supported-plugins)
-* Warning: [Click Here](#warningbr)
-* Limitations: [Click Here](#limitationsbr)
-* Using the API: [Click Here](#using-the-apibr)
-* Download: [Click Here](#downloadbr)
-* Licensing: [Click Here](#licensebr)
+* Warning: [Click Here](#warning)
+* Limitations: [Click Here](#limitations)
+* Using the API: [Click Here](#using-the-api)
+* Download: [Click Here](#download)
+* Licensing: [Click Here](#license)
 * TODO: [Click Here](https://github.com/StormTechnology/HologramBridge/blob/master/TODO.md)
 
 # Supported Plugins<br>
