@@ -1,9 +1,18 @@
-# Holographic Bridge<br>
 [![GitHub license](https://img.shields.io/github/license/StormTechnology/HologramBridge.svg)](https://github.com/StormTechnology/HologramBridge/blob/master/LICENSE)
 [![](https://jitpack.io/v/StormTechnology/HologramBridge.svg)](https://jitpack.io/#StormTechnology/HologramBridge)<br>
 [![Support Server](https://img.shields.io/discord/609145954926460928.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/y4xc5tNrbQ)
 
+# Hologram Bridge<br>
 A bridge between hologram plugins created by **Chubbyduck1**
+
+# Quick Links<br>
+* Supported Plugins: [Click Here](#supported-plugins)
+* Warning: [Click Here](#warningbr)
+* Limitations: [Click Here](#limitationsbr)
+* Using the API: [Click Here](#using-the-apibr)
+* Download: [Click Here](#downloadbr)
+* Licensing: [Click Here](#licensebr)
+* TODO: [Click Here](https://github.com/StormTechnology/HologramBridge/blob/master/TODO.md)
 
 # Supported Plugins<br>
 * HolographicDisplays
@@ -15,7 +24,7 @@ Some features of this bridge can be unstable. It is being worked on to be more s
 # Limitations<br>
 * Player Visibility not usable on HolographicDisplays
 
-# Starting the API<br>
+# Using The API<br>
 You can either run HologramBridge as a plugin, or shade it into your plugin.
 
 If you're shading it into your plugin, use the following to start it.
@@ -23,12 +32,12 @@ If you're shading it into your plugin, use the following to start it.
 new HologramBridge(JavaPlugin javaPlugin, boolean verbose);
 ```
 
-# Creating A Hologram<br>
+### Creating A Hologram<br>
 ```java
 final Hologram hologram = HologramAPI.createHologram(Location);
 ```
 
-# Adding Lines<br>
+### Adding Lines<br>
 ```java
 final Hologram hologram = HologramAPI.createHologram(Location);
 final ItemLine itemLine = hologram.appendItemLine(new ItemStack(Material.DIAMOND, 1));
