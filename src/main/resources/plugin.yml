@@ -7,3 +7,4 @@ description: A bridge between Hologram plugins
 softdepend:
     - HolographicDisplays
     - CMI
+    - Holograms

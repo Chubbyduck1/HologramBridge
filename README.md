@@ -15,8 +15,9 @@ A bridge between hologram plugins created by **Chubbyduck1**. The API has been d
 * TODO: [Click Here](https://github.com/StormTechnology/HologramBridge/blob/master/TODO.md)
 
 # Supported Plugins<br>
-* HolographicDisplays
-* CMI
+* [HolographicDisplays](https://dev.bukkit.org/projects/holographic-displays)
+* [CMI](https://www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/)
+* [Holograms](https://www.spigotmc.org/resources/holograms.4924/)
 
 # Warning<br>
 Some features of this bridge can be unstable. It is being worked on to be more stable.

@@ -94,13 +94,6 @@
 <!--        CMI Connector-->
 
         <dependency>
-            <groupId>com.github.Zrips</groupId>
-            <artifactId>CMI-API</artifactId>
-            <version>8.7.8.2</version>
-            <scope>provided</scope>
-        </dependency>
-
-        <dependency>
             <groupId>CMI-LIB</groupId>
             <artifactId>CMI-LIB</artifactId>
             <version>1.0</version>
@@ -114,6 +107,17 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/libs/CMI9.0.0.0API.jar</systemPath>
         </dependency>
+
+<!--        Holograms - https://www.spigotmc.org/resources/holograms.4924/-->
+
+        <dependency>
+            <groupId>Holograms</groupId>
+            <artifactId>Holograms</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/libs/Holograms-2.13.jar</systemPath>
+        </dependency>
+
     </dependencies>
 
 </project>

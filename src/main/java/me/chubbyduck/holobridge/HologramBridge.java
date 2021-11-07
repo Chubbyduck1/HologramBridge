@@ -14,6 +14,7 @@ package me.chubbyduck.holobridge;
 
 import lombok.Getter;
 import me.chubbyduck.holobridge.impl.CMIImpl;
+import me.chubbyduck.holobridge.impl.HologramsImpl;
 import me.chubbyduck.holobridge.impl.HolographicDisplaysImpl;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -69,6 +70,14 @@ public class HologramBridge {
             }
 
             HologramAPI.setConnector(new CMIImpl());
+        }
+
+        if(isEnabled("Holograms")) {
+            if(verbose) {
+                Bukkit.getLogger().info("Found Holograms Connector");
+            }
+
+            HologramAPI.setConnector(new HologramsImpl());
         }
     }
 
