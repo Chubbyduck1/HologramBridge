@@ -46,12 +46,12 @@ public class HologramBridge {
      * @param verbose    Whether it should log to console
      */
     public HologramBridge(JavaPlugin javaPlugin, boolean verbose) {
+        HologramBridge.instance = this;
+        
         this.javaPlugin = javaPlugin;
         this.verbose = verbose;
 
-        instance = this;
-
-        checkConnectors();
+        this.checkConnectors();
     }
 
     /**
