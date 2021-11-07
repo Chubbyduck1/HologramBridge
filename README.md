@@ -1,3 +1,4 @@
+[![Code Grade](https://www.code-inspector.com/project/29640/status/svg)](https://www.code-inspector.com/public/project/136/mygithubproject/dashboard)
 [![GitHub license](https://img.shields.io/github/license/StormTechnology/HologramBridge.svg)](https://github.com/StormTechnology/HologramBridge/blob/master/LICENSE)
 [![](https://jitpack.io/v/StormTechnology/HologramBridge.svg)](https://jitpack.io/#StormTechnology/HologramBridge)<br>
 [![Support Server](https://img.shields.io/discord/609145954926460928.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/y4xc5tNrbQ)
