@@ -13,8 +13,8 @@
 package me.chubbyduck.holobridge.lines.impl;
 
 import lombok.Getter;
-import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.lines.Line;
+import me.chubbyduck.holobridge.objects.Hologram;
 import org.bukkit.ChatColor;
 
 public class TextLine extends Line {
@@ -26,8 +26,9 @@ public class TextLine extends Line {
 
     /**
      * Create a new Item Line
+     *
      * @param hologram The parent {@link Hologram}
-     * @param text The default {@link String} text
+     * @param text     The default {@link String} text
      */
     public TextLine(Hologram hologram, String text) {
         this.hologram = hologram;
@@ -36,6 +37,7 @@ public class TextLine extends Line {
 
     /**
      * Set the displayed {@link String}
+     *
      * @param text The {@link String} to set
      */
     public void setText(String text) {

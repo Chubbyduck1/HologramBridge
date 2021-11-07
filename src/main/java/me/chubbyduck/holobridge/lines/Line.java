@@ -18,6 +18,7 @@ public abstract class Line {
 
     /**
      * Update a hologram line
+     *
      * @param hologram The parent hologram
      */
     public void update(Hologram hologram) {

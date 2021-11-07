@@ -22,11 +22,13 @@ import org.bukkit.Location;
 @UtilityClass
 public class HologramAPI {
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Connector connector;
 
     /**
      * Create a hologram at a location
+     *
      * @param location The {@link Location} for the hologram
      * @return The created Hologram
      */
@@ -36,6 +38,7 @@ public class HologramAPI {
 
     /**
      * Check if the HologramAPI has a connector
+     *
      * @return The {@link Boolean} value of if a connector is found
      */
     public static boolean hasConnector() {

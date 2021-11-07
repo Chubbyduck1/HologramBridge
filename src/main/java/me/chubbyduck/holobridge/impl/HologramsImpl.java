@@ -41,23 +41,28 @@ public class HologramsImpl implements Connector {
     @Override
     public void setLine(Hologram stormHologram, int lineIndex, Line line) {
         com.sainttx.holograms.api.Hologram hologram = getHologram(stormHologram);
+
         hologram.removeLine(
                 hologram.getLine(lineIndex)
         );
 
-        if(line instanceof ItemLine) {
+        if (line instanceof ItemLine) {
+
             hologram.addLine(
                     new com.sainttx.holograms.api.line.ItemLine(hologram, ((ItemLine) line).getItemStack()),
                     lineIndex
             );
+
             return;
         }
 
-        if(line instanceof TextLine) {
+        if (line instanceof TextLine) {
+
             hologram.addLine(
                     new com.sainttx.holograms.api.line.TextLine(hologram, ((TextLine) line).getText()),
                     lineIndex
             );
+
         }
     }
 
@@ -66,17 +71,18 @@ public class HologramsImpl implements Connector {
         com.sainttx.holograms.api.Hologram hologram = getHologram(stormHologram);
         HologramLine hologramLine = hologram.getLine(lineIndex);
 
-        if(hologramLine instanceof com.sainttx.holograms.api.line.ItemLine
-                && line instanceof ItemLine) {
+        if (line instanceof ItemLine
+                && hologramLine instanceof com.sainttx.holograms.api.line.ItemLine) {
 
             ItemStack itemStack = ((ItemLine) line).getItemStack();
             ((com.sainttx.holograms.api.line.ItemLine) hologramLine).setItem(itemStack);
 
             return;
+
         }
 
-        if(hologramLine instanceof com.sainttx.holograms.api.line.TextLine
-                && line instanceof TextLine) {
+        if (line instanceof TextLine
+                && hologramLine instanceof com.sainttx.holograms.api.line.TextLine) {
 
             String text = ((TextLine) line).getText();
             ((com.sainttx.holograms.api.line.TextLine) hologramLine).setText(text);
@@ -88,17 +94,21 @@ public class HologramsImpl implements Connector {
     public void appendLine(Hologram stormHologram, Line line) {
         com.sainttx.holograms.api.Hologram hologram = getHologram(stormHologram);
 
-        if(line instanceof ItemLine) {
+        if (line instanceof ItemLine) {
+
             hologram.addLine(
                     new com.sainttx.holograms.api.line.ItemLine(hologram, ((ItemLine) line).getItemStack())
             );
+
             return;
         }
 
-        if(line instanceof TextLine) {
+        if (line instanceof TextLine) {
+
             hologram.addLine(
                     new com.sainttx.holograms.api.line.TextLine(hologram, ((TextLine) line).getText())
             );
+
         }
     }
 

@@ -32,6 +32,7 @@ public class HologramBridge {
 
     /**
      * Initialize the HologramBridge without logging
+     *
      * @param javaPlugin The plugin that is connecting
      */
     public HologramBridge(JavaPlugin javaPlugin) {
@@ -40,8 +41,9 @@ public class HologramBridge {
 
     /**
      * Initialize the hologram bridge
+     *
      * @param javaPlugin The plugin that is connecting
-     * @param verbose Whether it should log to console
+     * @param verbose    Whether it should log to console
      */
     public HologramBridge(JavaPlugin javaPlugin, boolean verbose) {
         this.javaPlugin = javaPlugin;
@@ -56,24 +58,24 @@ public class HologramBridge {
      * Check and load the possible connectors
      */
     public void checkConnectors() {
-        if(isEnabled("HolographicDisplays")) {
-            if(verbose) {
+        if (isEnabled("HolographicDisplays")) {
+            if (verbose) {
                 Bukkit.getLogger().info("Found HolographicDisplays Connector");
             }
 
             HologramAPI.setConnector(new HolographicDisplaysImpl());
         }
 
-        if(isEnabled("CMI")) {
-            if(verbose) {
+        if (isEnabled("CMI")) {
+            if (verbose) {
                 Bukkit.getLogger().info("Found CMI Connector");
             }
 
             HologramAPI.setConnector(new CMIImpl());
         }
 
-        if(isEnabled("Holograms")) {
-            if(verbose) {
+        if (isEnabled("Holograms")) {
+            if (verbose) {
                 Bukkit.getLogger().info("Found Holograms Connector");
             }
 
@@ -83,6 +85,7 @@ public class HologramBridge {
 
     /**
      * Checks if a plugin is enabled
+     *
      * @param plugin The plugin name to check
      * @return The {@link Boolean} value of if its enabled
      */

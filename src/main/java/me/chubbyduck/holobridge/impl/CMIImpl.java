@@ -14,11 +14,12 @@ package me.chubbyduck.holobridge.impl;
 
 import com.Zrips.CMI.Modules.Holograms.CMIHologram;
 import me.chubbyduck.holobridge.interfaces.Connector;
-import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.lines.impl.ItemLine;
 import me.chubbyduck.holobridge.lines.impl.TextLine;
+import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.objects.VisibilityManager;
+import net.Zrips.CMILib.Container.CMILocation;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -31,7 +32,7 @@ public class CMIImpl implements Connector {
 
         return new Hologram(
                 this,
-                new CMIHologram(UUID.randomUUID().toString(), location),
+                new CMIHologram(UUID.randomUUID().toString(), new CMILocation(location)),
                 location
         );
 
@@ -41,11 +42,11 @@ public class CMIImpl implements Connector {
     public void setLine(Hologram stormHologram, int lineIndex, Line line) {
         CMIHologram hologram = getHologram(stormHologram);
 
-        if(line instanceof ItemLine) {
+        if (line instanceof ItemLine) {
             return;
         }
 
-        if(line instanceof TextLine) {
+        if (line instanceof TextLine) {
             hologram.setLine(lineIndex, ((TextLine) line).getText());
         }
     }
@@ -54,11 +55,11 @@ public class CMIImpl implements Connector {
     public void updateLine(Hologram stormHologram, int lineIndex, Line line) {
         CMIHologram hologram = getHologram(stormHologram);
 
-        if(line instanceof ItemLine) {
+        if (line instanceof ItemLine) {
             return;
         }
 
-        if(line instanceof TextLine) {
+        if (line instanceof TextLine) {
 
             String text = ((TextLine) line).getText();
             hologram.setLine(lineIndex, text);
@@ -70,11 +71,11 @@ public class CMIImpl implements Connector {
     public void appendLine(Hologram stormHologram, Line line) {
         CMIHologram hologram = getHologram(stormHologram);
 
-        if(line instanceof ItemLine) {
+        if (line instanceof ItemLine) {
             return;
         }
 
-        if(line instanceof TextLine) {
+        if (line instanceof TextLine) {
 
             String text = ((TextLine) line).getText();
             hologram.addLine(text);

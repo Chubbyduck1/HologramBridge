@@ -15,8 +15,8 @@ package me.chubbyduck.holobridge.objects;
 import lombok.Getter;
 import lombok.Setter;
 import me.chubbyduck.holobridge.interfaces.Connector;
-import me.chubbyduck.holobridge.lines.impl.ItemLine;
 import me.chubbyduck.holobridge.lines.Line;
+import me.chubbyduck.holobridge.lines.impl.ItemLine;
 import me.chubbyduck.holobridge.lines.impl.TextLine;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
@@ -34,17 +34,17 @@ public class Hologram {
 
     @Getter
     private final VisibilityManager visibilityManager;
-
-    @Getter @Setter
-    private Location location;
-
     private final List<Line> lines = new ArrayList<>();
+    @Getter
+    @Setter
+    private Location location;
 
     /**
      * Create a new hologram
-     * @param connector The connector to use
+     *
+     * @param connector      The connector to use
      * @param hologramObject The hologram object for the connector
-     * @param location The starting location
+     * @param location       The starting location
      */
     public Hologram(Connector connector, Object hologramObject, Location location) {
         this.connector = connector;
@@ -55,6 +55,7 @@ public class Hologram {
 
     /**
      * Get the amount of lines as an integer
+     *
      * @return The {@link Integer} amount of lines
      */
     public int getLineSize() {
@@ -63,6 +64,7 @@ public class Hologram {
 
     /**
      * Get all the lines
+     *
      * @return The {@link List} of {@link Line}s
      */
     public List<Line> getLines() {
@@ -71,6 +73,7 @@ public class Hologram {
 
     /**
      * Get the line at a specific index
+     *
      * @param index The index to get the line for
      * @return The {@link Line}
      */
@@ -80,6 +83,7 @@ public class Hologram {
 
     /**
      * Get the index of a line
+     *
      * @param line The {@link Line} to get the index of
      * @return The {@link Integer} index
      */
@@ -89,8 +93,9 @@ public class Hologram {
 
     /**
      * Set a line at a specific index
+     *
      * @param index The index to set
-     * @param line The line to set
+     * @param line  The line to set
      */
     public void setLineAt(int index, Line line) {
         this.lines.set(index, line);
@@ -99,8 +104,9 @@ public class Hologram {
 
     /**
      * Update a line at a specific index
+     *
      * @param index The index to update
-     * @param line The line to update
+     * @param line  The line to update
      */
     public void updateLine(int index, Line line) {
         this.connector.updateLine(this, index, line);
@@ -108,6 +114,7 @@ public class Hologram {
 
     /**
      * Append a line to the hologram
+     *
      * @param line The line to append
      */
     public void appendLine(Line line) {
@@ -117,6 +124,7 @@ public class Hologram {
 
     /**
      * Append an ItemStack line
+     *
      * @param itemStack The ItemStack to append
      * @return The {@link ItemLine}
      */
@@ -129,6 +137,7 @@ public class Hologram {
 
     /**
      * Append a Text line
+     *
      * @param text The Text to append
      * @return The {@link TextLine}
      */
@@ -141,6 +150,7 @@ public class Hologram {
 
     /**
      * Teleport a hologram to a location
+     *
      * @param location The location to teleport to
      */
     public void teleport(Location location) {

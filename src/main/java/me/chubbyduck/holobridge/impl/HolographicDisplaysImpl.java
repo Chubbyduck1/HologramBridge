@@ -16,10 +16,10 @@ import com.gmail.filoghost.holographicdisplays.api.HologramsAPI;
 import com.gmail.filoghost.holographicdisplays.api.line.HologramLine;
 import me.chubbyduck.holobridge.HologramBridge;
 import me.chubbyduck.holobridge.interfaces.Connector;
-import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.lines.impl.ItemLine;
 import me.chubbyduck.holobridge.lines.impl.TextLine;
+import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.objects.VisibilityManager;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -43,12 +43,12 @@ public class HolographicDisplaysImpl implements Connector {
         com.gmail.filoghost.holographicdisplays.api.Hologram hologram = getHologram(stormHologram);
         hologram.removeLine(lineIndex);
 
-        if(line instanceof me.chubbyduck.holobridge.lines.impl.ItemLine) {
+        if (line instanceof me.chubbyduck.holobridge.lines.impl.ItemLine) {
             hologram.insertItemLine(lineIndex, ((ItemLine) line).getItemStack());
             return;
         }
 
-        if(line instanceof me.chubbyduck.holobridge.lines.impl.TextLine) {
+        if (line instanceof me.chubbyduck.holobridge.lines.impl.TextLine) {
             hologram.insertTextLine(lineIndex, ((TextLine) line).getText());
         }
     }
@@ -58,8 +58,8 @@ public class HolographicDisplaysImpl implements Connector {
         com.gmail.filoghost.holographicdisplays.api.Hologram hologram = getHologram(stormHologram);
         HologramLine hologramLine = hologram.getLine(lineIndex);
 
-        if(hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.ItemLine
-                && line instanceof ItemLine) {
+        if (line instanceof ItemLine
+                && hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.ItemLine) {
 
             ItemStack itemStack = ((me.chubbyduck.holobridge.lines.impl.ItemLine) line).getItemStack();
             ((com.gmail.filoghost.holographicdisplays.api.line.ItemLine) hologramLine).setItemStack(itemStack);
@@ -67,8 +67,8 @@ public class HolographicDisplaysImpl implements Connector {
             return;
         }
 
-        if(hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.TextLine
-                && line instanceof TextLine) {
+        if (line instanceof TextLine
+                && hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.TextLine) {
 
             String text = ((TextLine) line).getText();
             ((com.gmail.filoghost.holographicdisplays.api.line.TextLine) hologramLine).setText(text);
@@ -80,7 +80,7 @@ public class HolographicDisplaysImpl implements Connector {
     public void appendLine(Hologram stormHologram, Line line) {
         com.gmail.filoghost.holographicdisplays.api.Hologram hologram = getHologram(stormHologram);
 
-        if(line instanceof ItemLine) {
+        if (line instanceof ItemLine) {
 
             ItemStack itemStack = ((ItemLine) line).getItemStack();
             hologram.appendItemLine(itemStack);
@@ -88,7 +88,7 @@ public class HolographicDisplaysImpl implements Connector {
             return;
         }
 
-        if(line instanceof TextLine) {
+        if (line instanceof TextLine) {
 
             String text = ((TextLine) line).getText();
             hologram.appendTextLine(text);

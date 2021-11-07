@@ -13,8 +13,8 @@
 package me.chubbyduck.holobridge.lines.impl;
 
 import lombok.Getter;
-import me.chubbyduck.holobridge.objects.Hologram;
 import me.chubbyduck.holobridge.lines.Line;
+import me.chubbyduck.holobridge.objects.Hologram;
 import org.bukkit.inventory.ItemStack;
 
 public class ItemLine extends Line {
@@ -26,7 +26,8 @@ public class ItemLine extends Line {
 
     /**
      * Create a new Item Line
-     * @param hologram The parent {@link Hologram}
+     *
+     * @param hologram  The parent {@link Hologram}
      * @param itemStack The default {@link ItemStack}
      */
     public ItemLine(Hologram hologram, ItemStack itemStack) {
@@ -36,6 +37,7 @@ public class ItemLine extends Line {
 
     /**
      * Set the displayed {@link ItemStack}
+     *
      * @param itemStack The {@link ItemStack} to set
      */
     public void setItemStack(ItemStack itemStack) {

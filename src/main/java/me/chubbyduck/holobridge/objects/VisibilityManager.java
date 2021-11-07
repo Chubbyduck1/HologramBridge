@@ -28,7 +28,8 @@ public class VisibilityManager {
 
     private final List<UUID> viewers = new ArrayList<>();
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private boolean visibleByDefault;
 
     public VisibilityManager(Hologram hologram) {
@@ -49,7 +50,7 @@ public class VisibilityManager {
     }
 
     public void resetVisibility(Player player) {
-        if(visibleByDefault) {
+        if (visibleByDefault) {
             viewers.add(player.getUniqueId());
             return;
         }

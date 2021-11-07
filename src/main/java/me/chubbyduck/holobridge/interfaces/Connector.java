@@ -22,6 +22,7 @@ public interface Connector {
 
     /**
      * Create a {@link Hologram}
+     *
      * @param location The starting {@link Location}
      * @return The created {@link Hologram}
      */
@@ -29,29 +30,33 @@ public interface Connector {
 
     /**
      * Set a holograms line at an index
-     * @param hologram The parent {@link Hologram}
+     *
+     * @param hologram  The parent {@link Hologram}
      * @param lineIndex The {@link Line} index
-     * @param line The {@link Line}
+     * @param line      The {@link Line}
      */
     void setLine(Hologram hologram, int lineIndex, Line line);
 
     /**
      * Update a {@link Hologram}s line
-     * @param hologram The parent {@link Hologram}
+     *
+     * @param hologram  The parent {@link Hologram}
      * @param lineIndex The {@link Line} index
-     * @param line The {@link Line}
+     * @param line      The {@link Line}
      */
     void updateLine(Hologram hologram, int lineIndex, Line line);
 
     /**
      * Append a {@link Line} to a {@link Hologram}
+     *
      * @param hologram The parent {@link Hologram}
-     * @param line The {@link Line}
+     * @param line     The {@link Line}
      */
     void appendLine(Hologram hologram, Line line);
 
     /**
      * Teleport a hologram
+     *
      * @param hologram The {@link Hologram} to teleport
      * @param location The {@link Location} to teleport it to
      */
@@ -64,15 +69,17 @@ public interface Connector {
 
     /**
      * Show a hologram to a player
+     *
      * @param visibilityManager The {@link VisibilityManager} to use
-     * @param player The player
+     * @param player            The player
      */
     void showTo(VisibilityManager visibilityManager, Player player);
 
     /**
      * Hide a hologram from a player
+     *
      * @param visibilityManager The {@link VisibilityManager} to use
-     * @param player The player
+     * @param player            The player
      */
     void hideTo(VisibilityManager visibilityManager, Player player);
 
