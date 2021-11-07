@@ -39,21 +39,21 @@ You can either run HologramBridge as a plugin, or shade it into your plugin.
 If you're shading it into your plugin, use the following to start it.
 
 ```java
-new HologramBridge(JavaPlugin javaPlugin,boolean verbose);
+new HologramBridge(JavaPlugin javaPlugin, boolean verbose);
 ```
 
 ### Creating A Hologram<br>
 
 ```java
-final Hologram hologram=HologramAPI.createHologram(Location);
+final Hologram hologram = HologramAPI.createHologram(Location);
 ```
 
 ### Adding Lines<br>
 
 ```java
-final Hologram hologram=HologramAPI.createHologram(Location);
-final ItemLine itemLine=hologram.appendItemLine(new ItemStack(Material.DIAMOND,1));
-final TextLine textLine=hologram.appendTextLine("Hello!");
+final Hologram hologram = HologramAPI.createHologram(Location);
+final ItemLine itemLine = hologram.appendItemLine(new ItemStack(Material.DIAMOND, 1));
+final TextLine textLine = hologram.appendTextLine("Hello!");
 ```
 
 # Download</br>
