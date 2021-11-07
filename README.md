@@ -30,7 +30,7 @@ Some features of this bridge can be unstable. It is being worked on to be more s
 
 # Limitations<br>
 
-* Player Visibility not usable on HolographicDisplays
+* If you find a limitation, or issue, please let us know in the discord.
 
 # Using The API<br>
 
