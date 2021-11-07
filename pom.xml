@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
@@ -17,6 +17,11 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -82,7 +87,7 @@
             <scope>provided</scope>
         </dependency>
 
-<!--        HolographicDisplays Connector-->
+        <!--        HolographicDisplays Connector-->
 
         <dependency>
             <groupId>com.gmail.filoghost.holographicdisplays</groupId>
@@ -91,7 +96,7 @@
             <scope>provided</scope>
         </dependency>
 
-<!--        CMI Connector-->
+        <!--        CMI Connector-->
 
         <dependency>
             <groupId>CMI-LIB</groupId>
@@ -108,7 +113,7 @@
             <systemPath>${project.basedir}/libs/CMI9.0.0.0API.jar</systemPath>
         </dependency>
 
-<!--        Holograms - https://www.spigotmc.org/resources/holograms.4924/-->
+        <!--        Holograms - https://www.spigotmc.org/resources/holograms.4924/-->
 
         <dependency>
             <groupId>Holograms</groupId>
