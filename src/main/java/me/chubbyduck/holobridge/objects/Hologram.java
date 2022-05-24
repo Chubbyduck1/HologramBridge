@@ -24,7 +24,7 @@ import org.bukkit.inventory.ItemStack;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hologram {
+public final class Hologram {
 
     @Getter
     private final Connector connector;

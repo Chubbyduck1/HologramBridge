@@ -25,7 +25,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class HolographicDisplaysImpl implements Connector {
+public final class HolographicDisplaysImpl implements Connector {
 
     @Override
     public Hologram createHologram(Location location) {

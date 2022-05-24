@@ -17,7 +17,7 @@ import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.objects.Hologram;
 import org.bukkit.inventory.ItemStack;
 
-public class ItemLine extends Line {
+public final class ItemLine extends Line {
 
     private final Hologram hologram;
 

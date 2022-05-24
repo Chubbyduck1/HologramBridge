@@ -17,7 +17,7 @@ import me.chubbyduck.holobridge.lines.Line;
 import me.chubbyduck.holobridge.objects.Hologram;
 import org.bukkit.ChatColor;
 
-public class TextLine extends Line {
+public final class TextLine extends Line {
 
     private final Hologram hologram;
 
