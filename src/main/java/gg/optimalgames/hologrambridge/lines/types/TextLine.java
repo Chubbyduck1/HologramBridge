@@ -1,0 +1,24 @@
+package gg.optimalgames.hologrambridge.lines.types;
+
+import gg.optimalgames.hologrambridge.lines.Line;
+import gg.optimalgames.hologrambridge.hologram.Hologram;
+
+/**
+ * A class which handles Text displays on any {@link Hologram}
+ */
+public interface TextLine extends Line {
+
+    /**
+     * Get the {@link String} that the {@link TextLine} currently represents
+     * @return The current displayed {@link String}
+     */
+    String getText();
+
+    /**
+     * Set the {@link String} the {@link TextLine} displays
+     * @param text The {@link String} to display
+     */
+    void setText(final String text);
+
+}
+

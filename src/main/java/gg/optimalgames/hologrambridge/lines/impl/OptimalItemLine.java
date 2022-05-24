@@ -10,39 +10,39 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.chubbyduck.holobridge.lines.impl;
+package gg.optimalgames.hologrambridge.lines.impl;
 
-import lombok.Getter;
-import me.chubbyduck.holobridge.lines.Line;
-import me.chubbyduck.holobridge.objects.Hologram;
-import org.bukkit.ChatColor;
+import gg.optimalgames.hologrambridge.lines.types.ItemLine;
+import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
+import org.bukkit.inventory.ItemStack;
 
-public final class TextLine extends Line {
+public final class OptimalItemLine implements ItemLine {
 
-    private final Hologram hologram;
+    private final OptimalHologram hologram;
 
-    @Getter
-    private String text;
+    private ItemStack itemStack;
 
     /**
      * Create a new Item Line
      *
-     * @param hologram The parent {@link Hologram}
-     * @param text     The default {@link String} text
+     * @param hologram  The parent {@link OptimalHologram}
+     * @param itemStack The default {@link ItemStack}
      */
-    public TextLine(Hologram hologram, String text) {
+    public OptimalItemLine(final OptimalHologram hologram,
+                           final ItemStack itemStack) {
         this.hologram = hologram;
-        this.text = ChatColor.translateAlternateColorCodes('&', text);
+        this.itemStack = itemStack;
     }
 
-    /**
-     * Set the displayed {@link String}
-     *
-     * @param text The {@link String} to set
-     */
-    public void setText(String text) {
-        this.text = ChatColor.translateAlternateColorCodes('&', text);
-        update(hologram);
+    @Override
+    public ItemStack getItemStack() {
+        return this.itemStack;
+    }
+
+    @Override
+    public void setItemStack(final ItemStack itemStack) {
+        this.itemStack = itemStack;
+        this.updateHologram(hologram);
     }
 
 }

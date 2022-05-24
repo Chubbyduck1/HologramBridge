@@ -10,14 +10,17 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.chubbyduck.holobridge.interfaces;
+package gg.optimalgames.hologrambridge.connector;
 
-import me.chubbyduck.holobridge.lines.Line;
-import me.chubbyduck.holobridge.objects.Hologram;
-import me.chubbyduck.holobridge.objects.VisibilityManager;
+import gg.optimalgames.hologrambridge.lines.Line;
+import gg.optimalgames.hologrambridge.hologram.Hologram;
+import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+/**
+ * The {@link Connector} which handles connections between multiple {@link Hologram} sources
+ */
 public interface Connector {
 
     /**
@@ -26,7 +29,7 @@ public interface Connector {
      * @param location The starting {@link Location}
      * @return The created {@link Hologram}
      */
-    Hologram createHologram(Location location);
+    Hologram createHologram(final Location location);
 
     /**
      * Set a holograms line at an index
@@ -35,7 +38,7 @@ public interface Connector {
      * @param lineIndex The {@link Line} index
      * @param line      The {@link Line}
      */
-    void setLine(Hologram hologram, int lineIndex, Line line);
+    void setLine(final Hologram hologram, final int lineIndex, final Line line);
 
     /**
      * Update a {@link Hologram}s line
@@ -44,7 +47,7 @@ public interface Connector {
      * @param lineIndex The {@link Line} index
      * @param line      The {@link Line}
      */
-    void updateLine(Hologram hologram, int lineIndex, Line line);
+    void updateLine(final Hologram hologram, final int lineIndex, final Line line);
 
     /**
      * Append a {@link Line} to a {@link Hologram}
@@ -52,7 +55,7 @@ public interface Connector {
      * @param hologram The parent {@link Hologram}
      * @param line     The {@link Line}
      */
-    void appendLine(Hologram hologram, Line line);
+    void appendLine(final Hologram hologram, final Line line);
 
     /**
      * Teleport a hologram
@@ -60,12 +63,12 @@ public interface Connector {
      * @param hologram The {@link Hologram} to teleport
      * @param location The {@link Location} to teleport it to
      */
-    void teleport(Hologram hologram, Location location);
+    void teleport(final Hologram hologram, final Location location);
 
     /**
      * Delete a hologram
      */
-    void delete(Hologram hologram);
+    void delete(final Hologram hologram);
 
     /**
      * Show a hologram to a player
@@ -73,7 +76,7 @@ public interface Connector {
      * @param visibilityManager The {@link VisibilityManager} to use
      * @param player            The player
      */
-    void showTo(VisibilityManager visibilityManager, Player player);
+    void showTo(final VisibilityManager visibilityManager, final Player player);
 
     /**
      * Hide a hologram from a player
@@ -81,6 +84,6 @@ public interface Connector {
      * @param visibilityManager The {@link VisibilityManager} to use
      * @param player            The player
      */
-    void hideTo(VisibilityManager visibilityManager, Player player);
+    void hideTo(final VisibilityManager visibilityManager, final Player player);
 
 }

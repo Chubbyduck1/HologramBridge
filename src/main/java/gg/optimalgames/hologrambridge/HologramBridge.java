@@ -10,25 +10,21 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.chubbyduck.holobridge;
+package gg.optimalgames.hologrambridge;
 
-import lombok.Getter;
-import me.chubbyduck.holobridge.impl.CMIImpl;
-import me.chubbyduck.holobridge.impl.DecentImpl;
-import me.chubbyduck.holobridge.impl.HologramsImpl;
-import me.chubbyduck.holobridge.impl.HolographicDisplaysImpl;
+import gg.optimalgames.hologrambridge.connector.impl.HolographicDisplaysImpl;
+import gg.optimalgames.hologrambridge.connector.impl.CMIImpl;
+import gg.optimalgames.hologrambridge.connector.impl.DecentImpl;
+import gg.optimalgames.hologrambridge.connector.impl.HologramsImpl;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
+/**
+ * Construct a new {@link HologramBridge} for your {@link JavaPlugin}
+ */
 public final class HologramBridge {
 
-    @Getter
-    private static HologramBridge instance;
-
-    @Getter
     private final JavaPlugin javaPlugin;
-
-    @Getter
     private final boolean verbose;
 
     /**
@@ -36,7 +32,7 @@ public final class HologramBridge {
      *
      * @param javaPlugin The plugin that is connecting
      */
-    public HologramBridge(JavaPlugin javaPlugin) {
+    public HologramBridge(final JavaPlugin javaPlugin) {
         this(javaPlugin, false);
     }
 
@@ -46,47 +42,39 @@ public final class HologramBridge {
      * @param javaPlugin The plugin that is connecting
      * @param verbose    Whether it should log to console
      */
-    public HologramBridge(JavaPlugin javaPlugin, boolean verbose) {
-        HologramBridge.instance = this;
-        
+    public HologramBridge(final JavaPlugin javaPlugin,
+                          final boolean verbose) {
         this.javaPlugin = javaPlugin;
         this.verbose = verbose;
 
+        HologramAPI.setJavaPlugin(this.javaPlugin);
         this.checkConnectors();
     }
 
     /**
      * Check and load the possible connectors
      */
-    public void checkConnectors() {
-        if (isEnabled("HolographicDisplays")) {
-            if (verbose) {
-                Bukkit.getLogger().info("Found HolographicDisplays Connector");
-            }
+    private void checkConnectors() {
+        if (this.isEnabled("HolographicDisplays")) {
+            this.log("Found HolographicDisplays Connector");
 
             HologramAPI.setConnector(new HolographicDisplaysImpl());
         }
 
-        if (isEnabled("CMI")) {
-            if (verbose) {
-                Bukkit.getLogger().info("Found CMI Connector");
-            }
+        if (this.isEnabled("CMI")) {
+            this.log("Found CMI Connector");
 
             HologramAPI.setConnector(new CMIImpl());
         }
 
-        if (isEnabled("Holograms")) {
-            if (verbose) {
-                Bukkit.getLogger().info("Found Holograms Connector");
-            }
+        if (this.isEnabled("Holograms")) {
+                this.log("Found Holograms Connector");
 
             HologramAPI.setConnector(new HologramsImpl());
         }
 
-        if (isEnabled("DecentHolograms")) {
-            if (verbose) {
-                Bukkit.getLogger().info("Found DecentHolograms Connector");
-            }
+        if (this.isEnabled("DecentHolograms")) {
+            this.log("Found DecentHolograms Connector");
 
             HologramAPI.setConnector(new DecentImpl());
         }
@@ -98,8 +86,20 @@ public final class HologramBridge {
      * @param plugin The plugin name to check
      * @return The {@link Boolean} value of if its enabled
      */
-    public boolean isEnabled(String plugin) {
+    private boolean isEnabled(String plugin) {
         return Bukkit.getServer().getPluginManager().isPluginEnabled(plugin);
+    }
+
+    /**
+     * Check if verbose is enabled, and log to console
+     * @param text The {@link String} to log
+     */
+    private void log(final String text) {
+        if (!verbose) {
+            return;
+        }
+
+        this.javaPlugin.getLogger().info(text);
     }
 
 }

@@ -10,15 +10,37 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.chubbyduck.holobridge;
+package gg.optimalgames.hologrambridge.lines.impl;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import gg.optimalgames.hologrambridge.lines.types.TextLine;
+import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
+import org.bukkit.ChatColor;
 
-public final class HologramBridgePlugin extends JavaPlugin {
+public final class OptimalTextLine implements TextLine {
+
+    private final OptimalHologram hologram;
+
+    private String text;
+
+    /**
+     * Create a new Item Line
+     *
+     * @param hologram The parent {@link OptimalHologram}
+     * @param text     The default {@link String} text
+     */
+    public OptimalTextLine(OptimalHologram hologram, String text) {
+        this.hologram = hologram;
+        this.text = ChatColor.translateAlternateColorCodes('&', text);
+    }
+
+    public String getText() {
+        return this.text;
+    }
 
     @Override
-    public void onEnable() {
-        new HologramBridge(this, true);
+    public void setText(String text) {
+        this.text = ChatColor.translateAlternateColorCodes('&', text);
+        this.updateHologram(hologram);
     }
 
 }

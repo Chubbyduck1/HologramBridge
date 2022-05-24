@@ -1,10 +1,7 @@
 name: HologramBridge
 version: ${project.version}
-main: me.chubbyduck.holobridge.HologramBridgePlugin
-api-version: 1.16
+main: gg.optimalgames.hologrambridge.HologramBridgePlugin
+api-version: 1.13
 authors: [ Chubbyduck1 ]
 description: A bridge between Hologram plugins
-softdepend:
-    - HolographicDisplays
-    - CMI
-    - Holograms
+softdepend: [ HolographicDisplays, CMI, Holograms, DecentHolograms ]

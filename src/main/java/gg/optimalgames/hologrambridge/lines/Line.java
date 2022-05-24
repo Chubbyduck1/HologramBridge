@@ -10,39 +10,22 @@
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package me.chubbyduck.holobridge;
+package gg.optimalgames.hologrambridge.lines;
 
-import lombok.Getter;
-import lombok.Setter;
-import lombok.experimental.UtilityClass;
-import me.chubbyduck.holobridge.interfaces.Connector;
-import me.chubbyduck.holobridge.objects.Hologram;
-import org.bukkit.Location;
+import gg.optimalgames.hologrambridge.hologram.Hologram;
 
-@UtilityClass
-public class HologramAPI {
-
-    @Getter
-    @Setter
-    private Connector connector;
+/**
+ * The line interface used to return lines, and which has a method to update the {@link Hologram}
+ */
+public interface Line {
 
     /**
-     * Create a hologram at a location
+     * Update a hologram line
      *
-     * @param location The {@link Location} for the hologram
-     * @return The created Hologram
+     * @param hologram The parent hologram
      */
-    public static Hologram createHologram(Location location) {
-        return connector.createHologram(location);
-    }
-
-    /**
-     * Check if the HologramAPI has a connector
-     *
-     * @return The {@link Boolean} value of if a connector is found
-     */
-    public static boolean hasConnector() {
-        return connector != null;
+    default void updateHologram(final Hologram hologram) {
+        hologram.updateLine(hologram.getLineIndex(this), this);
     }
 
 }
