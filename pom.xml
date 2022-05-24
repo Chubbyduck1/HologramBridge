@@ -6,7 +6,7 @@
 
     <groupId>gg.optimalgames</groupId>
     <artifactId>HologramBridge</artifactId>
-    <version>1.04-SNAPSHOT</version>
+    <version>1.0.4-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
