@@ -25,7 +25,7 @@ import org.bukkit.entity.Player;
 
 import java.util.UUID;
 
-public class CMIImpl implements Connector {
+public final class CMIImpl implements Connector {
 
     @Override
     public Hologram createHologram(Location location) {
@@ -95,12 +95,12 @@ public class CMIImpl implements Connector {
 
     @Override
     public void showTo(VisibilityManager visibilityManager, Player player) {
-        // Not Possible With CMI as far as I know
+        throw new UnsupportedOperationException("CMI does not support per-player holograms!");
     }
 
     @Override
     public void hideTo(VisibilityManager visibilityManager, Player player) {
-        // Not Possible With CMI as far as I know
+        throw new UnsupportedOperationException("CMI does not support per-player holograms!");
     }
 
     public CMIHologram getHologram(Hologram hologram) {

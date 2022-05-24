@@ -14,12 +14,13 @@ package me.chubbyduck.holobridge;
 
 import lombok.Getter;
 import me.chubbyduck.holobridge.impl.CMIImpl;
+import me.chubbyduck.holobridge.impl.DecentImpl;
 import me.chubbyduck.holobridge.impl.HologramsImpl;
 import me.chubbyduck.holobridge.impl.HolographicDisplaysImpl;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class HologramBridge {
+public final class HologramBridge {
 
     @Getter
     private static HologramBridge instance;
@@ -80,6 +81,14 @@ public class HologramBridge {
             }
 
             HologramAPI.setConnector(new HologramsImpl());
+        }
+
+        if (isEnabled("DecentHolograms")) {
+            if (verbose) {
+                Bukkit.getLogger().info("Found DecentHolograms Connector");
+            }
+
+            HologramAPI.setConnector(new DecentImpl());
         }
     }
 

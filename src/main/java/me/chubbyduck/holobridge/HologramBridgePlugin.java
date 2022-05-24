@@ -14,10 +14,11 @@ package me.chubbyduck.holobridge;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class HologramBridgePlugin extends JavaPlugin {
+public final class HologramBridgePlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
         new HologramBridge(this, true);
     }
+
 }

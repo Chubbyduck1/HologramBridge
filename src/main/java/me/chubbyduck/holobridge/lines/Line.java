@@ -14,7 +14,7 @@ package me.chubbyduck.holobridge.lines;
 
 import me.chubbyduck.holobridge.objects.Hologram;
 
-public class Line {
+public final class Line {
 
     /**
      * Update a hologram line

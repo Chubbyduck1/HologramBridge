@@ -25,7 +25,7 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.UUID;
 
-public class HologramsImpl implements Connector {
+public final class HologramsImpl implements Connector {
 
     @Override
     public Hologram createHologram(Location location) {
@@ -124,12 +124,12 @@ public class HologramsImpl implements Connector {
 
     @Override
     public void showTo(VisibilityManager visibilityManager, Player player) {
-        // As far as I know, this plugin doesn't have this
+        throw new UnsupportedOperationException("Holograms does not support per-player holograms!");
     }
 
     @Override
     public void hideTo(VisibilityManager visibilityManager, Player player) {
-        // As far as I know, this plugin doesn't have this
+        throw new UnsupportedOperationException("Holograms does not support per-player holograms!");
     }
 
     public com.sainttx.holograms.api.Hologram getHologram(Hologram hologram) {
