@@ -1,4 +1,4 @@
-[![Code Grade](https://www.code-inspector.com/project/33657/status/svg)](#)
+[![Code Grade](https://api.codiga.io/project/33657/score/svg)](#)
 [![GitHub license](https://img.shields.io/github/license/Chubbyduck1/HologramBridge.svg)](https://github.com/Chubbyduck1/HologramBridge/blob/master/LICENSE)
 [![](https://jitpack.io/v/Chubbyduck1/HologramBridge.svg)](https://jitpack.io/#Chubbyduck1/HologramBridge)<br>
 [![Support Server](https://img.shields.io/discord/609145954926460928.svg?label=Discord&logo=Discord&colorB=7289da&style=for-the-badge)](https://discord.gg/y4xc5tNrbQ)
