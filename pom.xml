@@ -13,6 +13,10 @@
         <maven.compiler.target>8</maven.compiler.target>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <!--        Connector Versions-->
+        <holographicdisplays.version>2.4.9</holographicdisplays.version>
+        <decentholograms.version>2.3.1</decentholograms.version>
     </properties>
 
     <build>
@@ -86,7 +90,7 @@
         <dependency>
             <groupId>com.gmail.filoghost.holographicdisplays</groupId>
             <artifactId>holographicdisplays-api</artifactId>
-            <version>2.4.8</version>
+            <version>${holographicdisplays.version}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -120,11 +124,10 @@
         <!--        Decent Holograms -->
 
         <dependency>
-            <groupId>decent</groupId>
-            <artifactId>decent</artifactId>
-            <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/libs/DecentHolograms.jar</systemPath>
+            <groupId>com.github.decentsoftware-eu</groupId>
+            <artifactId>decentholograms</artifactId>
+            <version>${decentholograms.version}</version>
+            <scope>provided</scope>
         </dependency>
 
     </dependencies>
