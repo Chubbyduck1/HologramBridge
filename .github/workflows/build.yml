@@ -23,3 +23,8 @@ jobs:
                   distribution: 'adopt'
             - name: Build with Maven
               run: mvn clean install -B
+            - name: Archive Artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: HologramBridge.jar
+                  path: target/HologramBridge.jar
