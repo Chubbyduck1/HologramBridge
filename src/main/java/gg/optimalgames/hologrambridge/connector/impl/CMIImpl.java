@@ -126,7 +126,14 @@ public final class CMIImpl implements Connector {
 
     @Override
     public void hideTo(final VisibilityManager visibilityManager, final Player player) {
-        throw new UnsupportedOperationException("CMI does not support per-player holograms!");
+        final Optional<CMIHologram> hologramOptional = this.getHologram(visibilityManager.getHologram());
+
+        if(!hologramOptional.isPresent()) {
+            return;
+        }
+
+        final CMIHologram cmiHologram = hologramOptional.get();
+        cmiHologram.hide(player.getUniqueId());
     }
 
     private Optional<CMIHologram> getHologram(final Hologram hologram) {

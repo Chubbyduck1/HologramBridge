@@ -100,12 +100,26 @@ public final class DecentImpl implements Connector {
 
     @Override
     public void showTo(final VisibilityManager visibilityManager, final Player player) {
-        throw new UnsupportedOperationException("DecentHolograms does not support per-player holograms!");
+        final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(visibilityManager.getHologram());
+
+        if(!hologramOptimal.isPresent()) {
+            return;
+        }
+
+        final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
+        decentHologram.show(player, 0);
     }
 
     @Override
     public void hideTo(final VisibilityManager visibilityManager, final Player player) {
-        throw new UnsupportedOperationException("DecentHolograms does not support per-player holograms!");
+        final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(visibilityManager.getHologram());
+
+        if(!hologramOptimal.isPresent()) {
+            return;
+        }
+
+        final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
+        decentHologram.hide(player);
     }
 
     private Optional<eu.decentsoftware.holograms.api.holograms.Hologram> getHologram(final Hologram hologram) {
