@@ -26,5 +26,5 @@ jobs:
             - name: Archive Artifacts
               uses: actions/upload-artifact@v3
               with:
-                  name: HologramBridge.jar
+                  name: Built Artifacts
                   path: target/HologramBridge.jar
