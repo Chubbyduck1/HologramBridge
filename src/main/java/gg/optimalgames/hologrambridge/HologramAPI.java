@@ -20,12 +20,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 /**
  * A class which handles Hologram data for external plugins
  */
-public class HologramAPI {
+public final class HologramAPI {
     
     private static Connector connector;
     private static JavaPlugin javaPlugin;
 
-    public HologramAPI() {
+    private HologramAPI() {
         throw new UnsupportedOperationException("Initialization of a utility class");
     }
 
