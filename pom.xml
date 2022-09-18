@@ -16,7 +16,7 @@
 
         <!--        Connector Versions-->
         <holographicdisplays.version>2.4.9</holographicdisplays.version>
-        <decentholograms.version>2.3.1</decentholograms.version>
+        <decentholograms.version>2.7.2</decentholograms.version>
     </properties>
 
     <build>
