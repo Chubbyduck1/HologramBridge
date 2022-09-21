@@ -6,7 +6,7 @@
 
     <groupId>gg.optimalgames</groupId>
     <artifactId>HologramBridge</artifactId>
-    <version>1.0.4-SNAPSHOT</version>
+    <version>1.0.5-SNAPSHOT</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -101,14 +101,14 @@
             <artifactId>CMI-LIB</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/CMILib1.0.4.2.jar</systemPath>
+            <systemPath>${pom.basedir}/libs/CMILib1.0.4.2.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>CMI</groupId>
             <artifactId>CMI</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/CMI9.0.0.0API.jar</systemPath>
+            <systemPath>${pom.basedir}/libs/CMI9.0.0.0API.jar</systemPath>
         </dependency>
 
         <!--        Holograms - https://www.spigotmc.org/resources/holograms.4924/ -->
@@ -118,7 +118,7 @@
             <artifactId>Holograms</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/libs/Holograms-2.13.jar</systemPath>
+            <systemPath>${pom.basedir}/libs/Holograms-2.13.jar</systemPath>
         </dependency>
 
         <!--        Decent Holograms -->

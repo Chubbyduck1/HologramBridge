@@ -64,6 +64,21 @@ Latest Version:
 
 Be sure to replace the **VERSION** key below with the version shown above!
 
+**Gradle**
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+```groovy
+dependencies {
+    implementation 'com.github.Chubbyduck1:HologramBridge:VERSION'
+}
+```
+
 **Maven**
 
 ```xml
@@ -80,6 +95,7 @@ Be sure to replace the **VERSION** key below with the version shown above!
     <version>VERSION</version>
 </dependency>
 ```
+
 
 # License<br>
 
