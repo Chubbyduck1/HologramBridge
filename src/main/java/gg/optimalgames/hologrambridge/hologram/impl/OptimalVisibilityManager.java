@@ -1,7 +1,7 @@
 /*
  * MIT License
  *
- * Copyright (c) 2021 Chubbyduck1
+ * Copyright (c) 2021-2022 Chubbyduck1
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
  *
@@ -12,6 +12,7 @@
 
 package gg.optimalgames.hologrambridge.hologram.impl;
 
+import gg.optimalgames.hologrambridge.connector.Connector;
 import gg.optimalgames.hologrambridge.hologram.Hologram;
 import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import org.bukkit.Bukkit;
@@ -29,14 +30,18 @@ public class OptimalVisibilityManager implements VisibilityManager {
     private final List<UUID> viewers = new ArrayList<>();
 
     private final Hologram hologram;
+    private final Connector connector;
+
     private boolean visibleByDefault;
 
     /**
      * Construct the default {@link VisibilityManager} for a {@link Hologram}
      * @param hologram The {@link Hologram} parent
      */
-    public OptimalVisibilityManager(final Hologram hologram) {
+    public OptimalVisibilityManager(final Hologram hologram,
+                                    final Connector connector) {
         this.hologram = hologram;
+        this.connector = connector;
         this.visibleByDefault = true;
     }
 
@@ -58,11 +63,13 @@ public class OptimalVisibilityManager implements VisibilityManager {
     @Override
     public void showTo(final Player player) {
         this.viewers.add(player.getUniqueId());
+        this.connector.showTo(this, player);
     }
 
     @Override
     public void hideTo(final Player player) {
         this.viewers.remove(player.getUniqueId());
+        this.connector.hideTo(this, player);
     }
 
     @Override
@@ -74,10 +81,12 @@ public class OptimalVisibilityManager implements VisibilityManager {
     public void resetVisibility(final Player player) {
         if (this.visibleByDefault) {
             this.viewers.add(player.getUniqueId());
+            this.connector.showTo(this, player);
             return;
         }
 
         this.viewers.remove(player.getUniqueId());
+        this.connector.hideTo(this, player);
     }
 
     @Override
