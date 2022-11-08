@@ -44,7 +44,7 @@ public final class CMIImpl implements Connector {
                         final Line line) {
         final Optional<CMIHologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -65,7 +65,7 @@ public final class CMIImpl implements Connector {
                            final Line line) {
         final Optional<CMIHologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -85,7 +85,7 @@ public final class CMIImpl implements Connector {
     public void appendLine(final Hologram hologram, final Line line) {
         final Optional<CMIHologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -105,7 +105,7 @@ public final class CMIImpl implements Connector {
     public void teleport(final Hologram hologram, final Location location) {
         final Optional<CMIHologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -120,6 +120,11 @@ public final class CMIImpl implements Connector {
     }
 
     @Override
+    public void setVisibleByDefault(final VisibilityManager visibilityManager, final boolean visibleByDefault) {
+        throw new UnsupportedOperationException("CMI does not support per-player holograms!");
+    }
+
+    @Override
     public void showTo(final VisibilityManager visibilityManager, final Player player) {
         throw new UnsupportedOperationException("CMI does not support per-player holograms!");
     }
@@ -128,18 +133,19 @@ public final class CMIImpl implements Connector {
     public void hideTo(final VisibilityManager visibilityManager, final Player player) {
         final Optional<CMIHologram> hologramOptional = this.getHologram(visibilityManager.getHologram());
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
         final CMIHologram cmiHologram = hologramOptional.get();
         cmiHologram.hide(player.getUniqueId());
+
     }
 
     private Optional<CMIHologram> getHologram(final Hologram hologram) {
         final Object hologramObject = hologram.getHologramAsObject();
 
-        if(hologramObject instanceof CMIHologram) {
+        if (hologramObject instanceof CMIHologram) {
             return Optional.of((CMIHologram) hologramObject);
         }
 

@@ -71,6 +71,14 @@ public interface Connector {
     void delete(final Hologram hologram);
 
     /**
+     * Update the Hologram to be visible by default
+     *
+     * @param visibilityManager The {@link VisibilityManager} to use
+     * @param visibleByDefault  The default visibility
+     */
+    void setVisibleByDefault(final VisibilityManager visibilityManager, final boolean visibleByDefault);
+
+    /**
      * Show a hologram to a player
      *
      * @param visibilityManager The {@link VisibilityManager} to use

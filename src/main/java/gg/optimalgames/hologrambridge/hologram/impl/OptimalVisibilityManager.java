@@ -36,6 +36,7 @@ public class OptimalVisibilityManager implements VisibilityManager {
 
     /**
      * Construct the default {@link VisibilityManager} for a {@link Hologram}
+     *
      * @param hologram The {@link Hologram} parent
      */
     public OptimalVisibilityManager(final Hologram hologram,
@@ -58,6 +59,7 @@ public class OptimalVisibilityManager implements VisibilityManager {
     @Override
     public void setVisibleByDefault(final boolean visibleByDefault) {
         this.visibleByDefault = visibleByDefault;
+        this.connector.setVisibleByDefault(this, visibleByDefault);
     }
 
     @Override

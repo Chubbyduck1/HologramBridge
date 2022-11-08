@@ -30,7 +30,8 @@ public final class DecentImpl implements Connector {
     @Override
     public Hologram createHologram(final Location location) {
         return new OptimalHologram(this,
-                DHAPI.createHologram("holobridge-" + ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE), location, false),
+                DHAPI.createHologram(
+                        "holobridge-" + ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE), location, false),
                 location);
     }
 
@@ -44,7 +45,7 @@ public final class DecentImpl implements Connector {
 
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -62,7 +63,7 @@ public final class DecentImpl implements Connector {
 
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -78,7 +79,7 @@ public final class DecentImpl implements Connector {
 
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -90,7 +91,7 @@ public final class DecentImpl implements Connector {
     public void teleport(final Hologram hologram, final Location location) {
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -102,7 +103,7 @@ public final class DecentImpl implements Connector {
     public void delete(final Hologram hologram) {
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -111,10 +112,22 @@ public final class DecentImpl implements Connector {
     }
 
     @Override
+    public void setVisibleByDefault(final VisibilityManager visibilityManager, final boolean visibleByDefault) {
+        final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(visibilityManager.getHologram());
+
+        if (!hologramOptimal.isPresent()) {
+            return;
+        }
+
+        final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
+        decentHologram.setDefaultVisibleState(visibleByDefault);
+    }
+
+    @Override
     public void showTo(final VisibilityManager visibilityManager, final Player player) {
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(visibilityManager.getHologram());
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -126,7 +139,7 @@ public final class DecentImpl implements Connector {
     public void hideTo(final VisibilityManager visibilityManager, final Player player) {
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(visibilityManager.getHologram());
 
-        if(!hologramOptimal.isPresent()) {
+        if (!hologramOptimal.isPresent()) {
             return;
         }
 
@@ -137,7 +150,7 @@ public final class DecentImpl implements Connector {
     private Optional<eu.decentsoftware.holograms.api.holograms.Hologram> getHologram(final Hologram hologram) {
         final Object hologramObject = hologram.getHologramAsObject();
 
-        if(hologramObject instanceof eu.decentsoftware.holograms.api.holograms.Hologram) {
+        if (hologramObject instanceof eu.decentsoftware.holograms.api.holograms.Hologram) {
             return Optional.of((eu.decentsoftware.holograms.api.holograms.Hologram) hologramObject);
         }
 

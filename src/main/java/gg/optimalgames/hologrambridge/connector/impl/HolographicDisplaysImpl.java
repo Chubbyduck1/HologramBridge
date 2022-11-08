@@ -45,7 +45,7 @@ public final class HolographicDisplaysImpl implements Connector {
                         final Line line) {
         final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -69,7 +69,7 @@ public final class HolographicDisplaysImpl implements Connector {
                            final Line line) {
         final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -78,14 +78,14 @@ public final class HolographicDisplaysImpl implements Connector {
         final HologramLine hologramLine = displaysHologram.getLine(lineIndex);
 
         if (line instanceof ItemLine
-                && hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.ItemLine) {
+            && hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.ItemLine) {
             final ItemStack itemStack = ((ItemLine) line).getItemStack();
             ((com.gmail.filoghost.holographicdisplays.api.line.ItemLine) hologramLine).setItemStack(itemStack);
             return;
         }
 
         if (line instanceof TextLine
-                && hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.TextLine) {
+            && hologramLine instanceof com.gmail.filoghost.holographicdisplays.api.line.TextLine) {
             final String text = ((TextLine) line).getText();
             ((com.gmail.filoghost.holographicdisplays.api.line.TextLine) hologramLine).setText(text);
         }
@@ -95,7 +95,7 @@ public final class HolographicDisplaysImpl implements Connector {
     public void appendLine(final Hologram hologram, final Line line) {
         final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -119,7 +119,7 @@ public final class HolographicDisplaysImpl implements Connector {
     public void teleport(final Hologram hologram, final Location location) {
         final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -135,10 +135,27 @@ public final class HolographicDisplaysImpl implements Connector {
     }
 
     @Override
+    public void setVisibleByDefault(final VisibilityManager visibilityManager, final boolean visibleByDefault) {
+        final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(visibilityManager.getHologram());
+
+        if (!hologramOptional.isPresent()) {
+            return;
+        }
+
+        final com.gmail.filoghost.holographicdisplays.api.Hologram displaysHologram
+                = hologramOptional.get();
+
+        final com.gmail.filoghost.holographicdisplays.api.VisibilityManager hologramVisibilityManager
+                = displaysHologram.getVisibilityManager();
+
+        hologramVisibilityManager.setVisibleByDefault(visibleByDefault);
+    }
+
+    @Override
     public void showTo(final VisibilityManager visibilityManager, final Player player) {
         final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(visibilityManager.getHologram());
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -155,7 +172,7 @@ public final class HolographicDisplaysImpl implements Connector {
     public void hideTo(final VisibilityManager visibilityManager, final Player player) {
         final Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> hologramOptional = this.getHologram(visibilityManager.getHologram());
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -171,7 +188,7 @@ public final class HolographicDisplaysImpl implements Connector {
     private Optional<com.gmail.filoghost.holographicdisplays.api.Hologram> getHologram(final Hologram hologram) {
         final Object hologramObject = hologram.getHologramAsObject();
 
-        if(hologramObject instanceof com.gmail.filoghost.holographicdisplays.api.Hologram) {
+        if (hologramObject instanceof com.gmail.filoghost.holographicdisplays.api.Hologram) {
             return Optional.of((com.gmail.filoghost.holographicdisplays.api.Hologram) hologramObject);
         }
 

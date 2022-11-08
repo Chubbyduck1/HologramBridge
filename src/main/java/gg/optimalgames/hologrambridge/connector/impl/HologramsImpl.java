@@ -44,7 +44,7 @@ public final class HologramsImpl implements Connector {
                         final Line line) {
         final Optional<com.sainttx.holograms.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -73,7 +73,7 @@ public final class HologramsImpl implements Connector {
                            final Line line) {
         final Optional<com.sainttx.holograms.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -81,7 +81,7 @@ public final class HologramsImpl implements Connector {
         final HologramLine hologramLine = saintHologram.getLine(lineIndex);
 
         if (line instanceof ItemLine
-                && hologramLine instanceof com.sainttx.holograms.api.line.ItemLine) {
+            && hologramLine instanceof com.sainttx.holograms.api.line.ItemLine) {
             final ItemStack itemStack = ((ItemLine) line).getItemStack();
             ((com.sainttx.holograms.api.line.ItemLine) hologramLine).setItem(itemStack);
 
@@ -89,7 +89,7 @@ public final class HologramsImpl implements Connector {
         }
 
         if (line instanceof TextLine
-                && hologramLine instanceof com.sainttx.holograms.api.line.TextLine) {
+            && hologramLine instanceof com.sainttx.holograms.api.line.TextLine) {
             final String text = ((TextLine) line).getText();
             ((com.sainttx.holograms.api.line.TextLine) hologramLine).setText(text);
         }
@@ -100,7 +100,7 @@ public final class HologramsImpl implements Connector {
                            final Line line) {
         final Optional<com.sainttx.holograms.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -125,7 +125,7 @@ public final class HologramsImpl implements Connector {
                          final Location location) {
         final Optional<com.sainttx.holograms.api.Hologram> hologramOptional = this.getHologram(hologram);
 
-        if(!hologramOptional.isPresent()) {
+        if (!hologramOptional.isPresent()) {
             return;
         }
 
@@ -137,6 +137,11 @@ public final class HologramsImpl implements Connector {
     public void delete(final Hologram hologram) {
         final Optional<com.sainttx.holograms.api.Hologram> hologramOptional = this.getHologram(hologram);
         hologramOptional.ifPresent(com.sainttx.holograms.api.Hologram::despawn);
+    }
+
+    @Override
+    public void setVisibleByDefault(final VisibilityManager visibilityManager, final boolean visibleByDefault) {
+        throw new UnsupportedOperationException("Holograms does not support per-player holograms!");
     }
 
     @Override
@@ -152,7 +157,7 @@ public final class HologramsImpl implements Connector {
     private Optional<com.sainttx.holograms.api.Hologram> getHologram(final Hologram hologram) {
         final Object hologramObject = hologram.getHologramAsObject();
 
-        if(hologramObject instanceof com.sainttx.holograms.api.Hologram) {
+        if (hologramObject instanceof com.sainttx.holograms.api.Hologram) {
             return Optional.of((com.sainttx.holograms.api.Hologram) hologramObject);
         }
 
