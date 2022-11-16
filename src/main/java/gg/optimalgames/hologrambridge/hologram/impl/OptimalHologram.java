@@ -61,6 +61,11 @@ public final class OptimalHologram implements Hologram {
     }
 
     @Override
+    public void clearLines() {
+        this.lines.clear();
+    }
+
+    @Override
     public Line getLineAt(final int index) {
         return this.lines.get(index);
     }
