@@ -33,6 +33,11 @@ public interface Hologram {
     Collection<Line> getLines();
 
     /**
+     * Clear {@link Collection} of {@link Line}s that {@link Hologram} is displaying
+     */
+    void clearLines();
+
+    /**
      * Get a {@link Line} at an index
      * @param index The index to use to fetch the line
      * @return The {@link Line}
