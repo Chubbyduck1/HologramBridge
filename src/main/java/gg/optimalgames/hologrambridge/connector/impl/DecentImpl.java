@@ -18,6 +18,7 @@ import gg.optimalgames.hologrambridge.hologram.Hologram;
 import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
 import gg.optimalgames.hologrambridge.lines.Line;
+import gg.optimalgames.hologrambridge.lines.types.ItemLine;
 import gg.optimalgames.hologrambridge.lines.types.TextLine;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -40,10 +41,6 @@ public final class DecentImpl implements Connector {
     public void setLine(final Hologram hologram,
                         final int lineIndex,
                         final Line line) {
-        if (!(line instanceof TextLine)) {
-            return;
-        }
-
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
         if (!hologramOptimal.isPresent()) {
@@ -51,17 +48,21 @@ public final class DecentImpl implements Connector {
         }
 
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
-        DHAPI.setHologramLine(decentHologram, lineIndex, ((TextLine) line).getText());
+
+        if (line instanceof ItemLine) {
+            DHAPI.setHologramLine(decentHologram, lineIndex, ((ItemLine) line).getItemStack());
+            return;
+        }
+
+        if (line instanceof TextLine) {
+            DHAPI.setHologramLine(decentHologram, lineIndex, ((TextLine) line).getText());
+        }
     }
 
     @Override
     public void updateLine(final Hologram hologram,
                            final int lineIndex,
                            final Line line) {
-        if (!(line instanceof TextLine)) {
-            return;
-        }
-
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
         if (!hologramOptimal.isPresent()) {
@@ -69,15 +70,19 @@ public final class DecentImpl implements Connector {
         }
 
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
-        DHAPI.setHologramLine(decentHologram, lineIndex, ((TextLine) line).getText());
+
+        if (line instanceof ItemLine) {
+            DHAPI.setHologramLine(decentHologram, lineIndex, ((ItemLine) line).getItemStack());
+            return;
+        }
+
+        if (line instanceof TextLine) {
+            DHAPI.setHologramLine(decentHologram, lineIndex, ((TextLine) line).getText());
+        }
     }
 
     @Override
     public void appendLine(final Hologram hologram, final Line line) {
-        if (!(line instanceof TextLine)) {
-            return;
-        }
-
         final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
 
         if (!hologramOptimal.isPresent()) {
@@ -85,7 +90,15 @@ public final class DecentImpl implements Connector {
         }
 
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
-        DHAPI.addHologramLine(decentHologram, ((TextLine) line).getText());
+
+        if (line instanceof ItemLine) {
+            DHAPI.addHologramLine(decentHologram, ((ItemLine) line).getItemStack());
+            return;
+        }
+
+        if (line instanceof TextLine) {
+            DHAPI.addHologramLine(decentHologram, ((TextLine) line).getText());
+        }
     }
 
     @Override
