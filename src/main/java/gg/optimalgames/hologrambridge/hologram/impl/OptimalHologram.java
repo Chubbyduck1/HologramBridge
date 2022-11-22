@@ -12,14 +12,14 @@
 
 package gg.optimalgames.hologrambridge.hologram.impl;
 
-import gg.optimalgames.hologrambridge.lines.impl.OptimalItemLine;
 import gg.optimalgames.hologrambridge.connector.Connector;
+import gg.optimalgames.hologrambridge.hologram.Hologram;
+import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import gg.optimalgames.hologrambridge.lines.Line;
+import gg.optimalgames.hologrambridge.lines.impl.OptimalItemLine;
 import gg.optimalgames.hologrambridge.lines.impl.OptimalTextLine;
 import gg.optimalgames.hologrambridge.lines.types.ItemLine;
 import gg.optimalgames.hologrambridge.lines.types.TextLine;
-import gg.optimalgames.hologrambridge.hologram.Hologram;
-import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
@@ -33,10 +33,9 @@ public final class OptimalHologram implements Hologram {
 
     private final Connector connector;
     private final Object hologramObject;
-    private Location location;
-
     private final VisibilityManager visibilityManager;
     private final List<Line> lines = new ArrayList<>();
+    private Location location;
 
     /**
      * Create a new hologram
@@ -63,6 +62,7 @@ public final class OptimalHologram implements Hologram {
     @Override
     public void clearLines() {
         this.lines.clear();
+        this.connector.clearLines(this);
     }
 
     @Override

@@ -19,14 +19,15 @@ HolographicDisplays, while supporting different plugins.
 
 # Supported Plugins<br>
 
-* [HolographicDisplays](https://dev.bukkit.org/projects/holographic-displays)
+* [HolographicDisplays (2.x - 3.x)](https://dev.bukkit.org/projects/holographic-displays)
 * [CMI](https://www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/)
 * [Holograms](https://www.spigotmc.org/resources/holograms.4924/)
 * [Decent Holograms](https://www.spigotmc.org/resources/decent-holograms-1-8-1-18-2-papi-support-no-dependencies.96927/)
 
 # Warning<br>
 
-Some features of this bridge can be unstable. It is being worked on to be more stable. If you find any bugs, please contact me.
+Some features of this bridge can be unstable. It is being worked on to be more stable. If you find any bugs, please
+contact me.
 
 # Limitations<br>
 
@@ -39,21 +40,21 @@ You can either run HologramBridge as a plugin, or shade it into your plugin.
 If you're shading it into your plugin, use the following to start it.
 
 ```java
-new HologramBridge(final JavaPlugin javaPlugin, final boolean verbose);
+new HologramBridge(final JavaPlugin javaPlugin,final boolean verbose);
 ```
 
 ### Creating A Hologram<br>
 
 ```java
-final Hologram hologram = HologramAPI.createHologram(Location);
+final Hologram hologram=HologramAPI.createHologram(Location);
 ```
 
 ### Adding Lines<br>
 
 ```java
-final Hologram hologram = HologramAPI.createHologram(Location);
-final ItemLine itemLine = hologram.appendItemLine(new ItemStack(Material.DIAMOND, 1));
-final TextLine textLine = hologram.appendTextLine("Hello!");
+final Hologram hologram=HologramAPI.createHologram(Location);
+final ItemLine itemLine=hologram.appendItemLine(new ItemStack(Material.DIAMOND,1));
+final TextLine textLine=hologram.appendTextLine("Hello!");
 ```
 
 # Download</br>
@@ -65,6 +66,7 @@ Latest Version:
 Be sure to replace the **VERSION** key below with the version shown above!
 
 **Gradle**
+
 ```groovy
 allprojects {
     repositories {
@@ -82,6 +84,7 @@ dependencies {
 **Maven**
 
 ```xml
+
 <repository>
     <id>jitpack.io</id>
     <url>https://jitpack.io</url>
@@ -89,13 +92,13 @@ dependencies {
 ```
 
 ```xml
+
 <dependency>
     <groupId>com.github.chubbyduck1</groupId>
     <artifactId>HologramBridge</artifactId>
     <version>VERSION</version>
 </dependency>
 ```
-
 
 # License<br>
 

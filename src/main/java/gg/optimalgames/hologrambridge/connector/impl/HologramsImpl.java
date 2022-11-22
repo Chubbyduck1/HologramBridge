@@ -24,6 +24,7 @@ import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -117,6 +118,23 @@ public final class HologramsImpl implements Connector {
             saintHologram.addLine(
                     new com.sainttx.holograms.api.line.TextLine(saintHologram, ((TextLine) line).getText())
             );
+        }
+    }
+
+    @Override
+    public void clearLines(final Hologram hologram) {
+        final Optional<com.sainttx.holograms.api.Hologram> hologramOptional = this.getHologram(hologram);
+
+        if (!hologramOptional.isPresent()) {
+            return;
+        }
+
+        final com.sainttx.holograms.api.Hologram saintHologram = hologramOptional.get();
+        final Iterator<HologramLine> hologramLineIterator = saintHologram.getLines().iterator();
+
+        while (hologramLineIterator.hasNext()) {
+            final HologramLine hologramLine = hologramLineIterator.next();
+            saintHologram.removeLine(hologramLine);
         }
     }
 

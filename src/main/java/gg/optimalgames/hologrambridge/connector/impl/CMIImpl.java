@@ -14,16 +14,17 @@ package gg.optimalgames.hologrambridge.connector.impl;
 
 import com.Zrips.CMI.Modules.Holograms.CMIHologram;
 import gg.optimalgames.hologrambridge.connector.Connector;
+import gg.optimalgames.hologrambridge.hologram.Hologram;
+import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
+import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
 import gg.optimalgames.hologrambridge.lines.Line;
 import gg.optimalgames.hologrambridge.lines.types.ItemLine;
 import gg.optimalgames.hologrambridge.lines.types.TextLine;
-import gg.optimalgames.hologrambridge.hologram.Hologram;
-import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
-import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import net.Zrips.CMILib.Container.CMILocation;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import java.util.Collections;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -99,6 +100,18 @@ public final class CMIImpl implements Connector {
             final String text = ((TextLine) line).getText();
             cmiHologram.addLine(text);
         }
+    }
+
+    @Override
+    public void clearLines(final Hologram hologram) {
+        final Optional<CMIHologram> hologramOptional = this.getHologram(hologram);
+
+        if (!hologramOptional.isPresent()) {
+            return;
+        }
+
+        final CMIHologram cmiHologram = hologramOptional.get();
+        cmiHologram.setLines(Collections.emptyList());
     }
 
     @Override

@@ -58,7 +58,7 @@ public final class HologramBridge {
         if (this.isEnabled("HolographicDisplays")) {
             this.log("Found HolographicDisplays Connector");
 
-            HologramAPI.setConnector(new HolographicDisplaysImpl());
+            HologramAPI.setConnector(new HolographicDisplaysImpl(this, this.javaPlugin));
         }
 
         if (this.isEnabled("CMI")) {
@@ -68,7 +68,7 @@ public final class HologramBridge {
         }
 
         if (this.isEnabled("Holograms")) {
-                this.log("Found Holograms Connector");
+            this.log("Found Holograms Connector");
 
             HologramAPI.setConnector(new HologramsImpl());
         }
@@ -92,9 +92,10 @@ public final class HologramBridge {
 
     /**
      * Check if verbose is enabled, and log to console
+     *
      * @param text The {@link String} to log
      */
-    private void log(final String text) {
+    public void log(final String text) {
         if (!verbose) {
             return;
         }

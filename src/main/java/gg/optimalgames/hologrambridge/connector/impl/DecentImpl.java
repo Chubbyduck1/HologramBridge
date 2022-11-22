@@ -14,14 +14,15 @@ package gg.optimalgames.hologrambridge.connector.impl;
 
 import eu.decentsoftware.holograms.api.DHAPI;
 import gg.optimalgames.hologrambridge.connector.Connector;
+import gg.optimalgames.hologrambridge.hologram.Hologram;
+import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
+import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
 import gg.optimalgames.hologrambridge.lines.Line;
 import gg.optimalgames.hologrambridge.lines.types.TextLine;
-import gg.optimalgames.hologrambridge.hologram.Hologram;
-import gg.optimalgames.hologrambridge.hologram.impl.OptimalHologram;
-import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import java.util.Collections;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -85,6 +86,18 @@ public final class DecentImpl implements Connector {
 
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
         DHAPI.addHologramLine(decentHologram, ((TextLine) line).getText());
+    }
+
+    @Override
+    public void clearLines(final Hologram hologram) {
+        final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
+
+        if (!hologramOptimal.isPresent()) {
+            return;
+        }
+
+        final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
+        DHAPI.setHologramLines(decentHologram, Collections.emptyList());
     }
 
     @Override

@@ -12,9 +12,9 @@
 
 package gg.optimalgames.hologrambridge.connector;
 
-import gg.optimalgames.hologrambridge.lines.Line;
 import gg.optimalgames.hologrambridge.hologram.Hologram;
 import gg.optimalgames.hologrambridge.hologram.VisibilityManager;
+import gg.optimalgames.hologrambridge.lines.Line;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
@@ -56,6 +56,13 @@ public interface Connector {
      * @param line     The {@link Line}
      */
     void appendLine(final Hologram hologram, final Line line);
+
+    /**
+     * Clear the lines of a {@link Hologram}
+     *
+     * @param hologram The parent {@link Hologram}
+     */
+    void clearLines(final Hologram hologram);
 
     /**
      * Teleport a hologram
