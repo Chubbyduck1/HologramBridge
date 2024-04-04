@@ -159,7 +159,7 @@ public final class DecentImpl implements Connector {
 
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
         decentHologram.setShowPlayer(player);
-        decentHologram.show(player, 0);
+        decentHologram.show(player, 1);
     }
 
     @Override
