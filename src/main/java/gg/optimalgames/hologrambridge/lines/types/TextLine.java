@@ -14,6 +14,8 @@ package gg.optimalgames.hologrambridge.lines.types;
 
 import gg.optimalgames.hologrambridge.lines.Line;
 import gg.optimalgames.hologrambridge.hologram.Hologram;
+import gg.optimalgames.hologrambridge.utils.ComponentUtils;
+import net.kyori.adventure.text.Component;
 
 /**
  * A class which handles Text displays on any {@link Hologram}
@@ -31,6 +33,15 @@ public interface TextLine extends Line {
      * @param text The {@link String} to display
      */
     void setText(final String text);
+
+    /**
+     * Set the {@link Component} the {@link TextLine} displays
+     * @param component The {@link Component} to display
+     */
+    default void setComponent(final Component component) {
+        // Must convert to legacy because plugins like DecentHolograms don't support MiniMessage :(.
+        this.setText(ComponentUtils.toLegacy(component));
+    }
 
 }
 

@@ -6,7 +6,7 @@
 
     <groupId>gg.optimalgames</groupId>
     <artifactId>HologramBridge</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2</version>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
@@ -135,6 +135,21 @@
             <groupId>com.github.decentsoftware-eu</groupId>
             <artifactId>decentholograms</artifactId>
             <version>${decentholograms.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- mini message -->
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-minimessage</artifactId>
+            <version>4.16.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-text-serializer-legacy</artifactId>
+            <version>4.16.0</version>
             <scope>provided</scope>
         </dependency>
 

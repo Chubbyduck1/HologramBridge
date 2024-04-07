@@ -16,6 +16,8 @@ import gg.optimalgames.hologrambridge.connector.Connector;
 import gg.optimalgames.hologrambridge.lines.Line;
 import gg.optimalgames.hologrambridge.lines.types.ItemLine;
 import gg.optimalgames.hologrambridge.lines.types.TextLine;
+import gg.optimalgames.hologrambridge.utils.ComponentUtils;
+import net.kyori.adventure.text.Component;
 import org.bukkit.Location;
 import org.bukkit.inventory.ItemStack;
 
@@ -84,6 +86,17 @@ public interface Hologram {
      * @return The {@link TextLine} created
      */
     TextLine appendTextLine(final String text);
+
+
+    /**
+     * Append a {@link TextLine} to the {@link Hologram} with a {@link Component} display
+     * @param component The {@link String} to display
+     * @return The {@link TextLine} created
+     */
+    default TextLine appendTextLine(final Component component) {
+        // Must convert to legacy, as plugins like DecentHologram don't support MiniMessage :(.
+        return this.appendTextLine(ComponentUtils.toLegacy(component));
+    }
 
     /**
      * Get the {@link VisibilityManager} for the {@link Hologram}
