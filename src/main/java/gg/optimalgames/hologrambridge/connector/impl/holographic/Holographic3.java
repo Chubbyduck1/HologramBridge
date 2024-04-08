@@ -160,6 +160,11 @@ public class Holographic3 implements Connector {
         ));
     }
 
+    @Override
+    public double getHeight(final Hologram hologram) {
+        throw new UnsupportedOperationException("HolographicDisplays does not support getting the height!");
+    }
+
     private void modifyHologram(final Hologram hologram,
                                 final Consumer<me.filoghost.holographicdisplays.api.hologram.Hologram> consumer) {
         final Object hologramObject = hologram.getHologramAsObject();

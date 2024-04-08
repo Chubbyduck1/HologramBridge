@@ -135,6 +135,11 @@ public final class OptimalHologram implements Hologram {
     }
 
     @Override
+    public double getHeight() {
+        return this.connector.getHeight(this);
+    }
+
+    @Override
     public Object getHologramAsObject() {
         return this.hologramObject;
     }

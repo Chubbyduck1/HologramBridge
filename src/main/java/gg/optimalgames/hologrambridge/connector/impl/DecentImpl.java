@@ -159,7 +159,7 @@ public final class DecentImpl implements Connector {
 
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
         decentHologram.setShowPlayer(player);
-        decentHologram.show(player, 1);
+        decentHologram.show(player, 0);
     }
 
     @Override
@@ -173,6 +173,18 @@ public final class DecentImpl implements Connector {
         final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
         decentHologram.setHidePlayer(player);
         decentHologram.hide(player);
+    }
+
+    @Override
+    public double getHeight(final Hologram hologram) {
+        final Optional<eu.decentsoftware.holograms.api.holograms.Hologram> hologramOptimal = this.getHologram(hologram);
+
+        if (!hologramOptimal.isPresent()) {
+            return 0;
+        }
+
+        final eu.decentsoftware.holograms.api.holograms.Hologram decentHologram = hologramOptimal.get();
+        return decentHologram.getPage(0).getHeight();
     }
 
     private Optional<eu.decentsoftware.holograms.api.holograms.Hologram> getHologram(final Hologram hologram) {

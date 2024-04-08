@@ -97,6 +97,11 @@ public final class HolographicDisplaysImpl implements Connector {
         this.connector.hideTo(visibilityManager, player);
     }
 
+    @Override
+    public double getHeight(final Hologram hologram) {
+        return this.connector.getHeight(hologram);
+    }
+
     /**
      * Check if the HolographicDisplays version is below 3.0
      *

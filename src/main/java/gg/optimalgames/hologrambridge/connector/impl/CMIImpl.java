@@ -152,7 +152,18 @@ public final class CMIImpl implements Connector {
 
         final CMIHologram cmiHologram = hologramOptional.get();
         cmiHologram.hide(player.getUniqueId());
+    }
 
+    @Override
+    public double getHeight(final Hologram hologram) {
+        final Optional<CMIHologram> hologramOptional = this.getHologram(hologram);
+
+        if (!hologramOptional.isPresent()) {
+            return 00;
+        }
+
+        final CMIHologram cmiHologram = hologramOptional.get();
+        return cmiHologram.getHeight();
     }
 
     private Optional<CMIHologram> getHologram(final Hologram hologram) {

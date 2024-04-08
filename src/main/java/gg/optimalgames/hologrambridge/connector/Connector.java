@@ -101,4 +101,11 @@ public interface Connector {
      */
     void hideTo(final VisibilityManager visibilityManager, final Player player);
 
+    /**
+     * Get the height of a {@link Hologram}
+     * @param hologram The {@link Hologram} to get the height of
+     * @return The height
+     */
+    double getHeight(final Hologram hologram);
+
 }

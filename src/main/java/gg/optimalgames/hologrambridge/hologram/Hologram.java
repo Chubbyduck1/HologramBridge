@@ -128,6 +128,12 @@ public interface Hologram {
     int size();
 
     /**
+     * Get the height of the {@link Hologram}
+     * @return The height of the {@link Hologram}
+     */
+    double getHeight();
+
+    /**
      * Get the {@link Hologram} as a {@link Object} from the {@link Connector} source
      * @return The {@link Object}
      */

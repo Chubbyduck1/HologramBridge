@@ -172,6 +172,11 @@ public final class HologramsImpl implements Connector {
         throw new UnsupportedOperationException("Holograms does not support per-player holograms!");
     }
 
+    @Override
+    public double getHeight(final Hologram hologram) {
+        throw new UnsupportedOperationException("Holograms does not support getting the height!");
+    }
+
     private Optional<com.sainttx.holograms.api.Hologram> getHologram(final Hologram hologram) {
         final Object hologramObject = hologram.getHologramAsObject();
 

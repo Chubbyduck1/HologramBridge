@@ -125,6 +125,11 @@ public final class Holographic2 implements Connector {
         this.modifyHologram(visibilityManager.getHologram(), holo -> holo.getVisibilityManager().hideTo(player));
     }
 
+    @Override
+    public double getHeight(final Hologram hologram) {
+        throw new UnsupportedOperationException("HolographicDisplays does not support getting the height!");
+    }
+
     private void modifyHologram(final Hologram hologram,
                                 final Consumer<com.gmail.filoghost.holographicdisplays.api.Hologram> consumer) {
         final Object hologramObject = hologram.getHologramAsObject();
