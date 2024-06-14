@@ -4,4 +4,4 @@ main: gg.optimalgames.hologrambridge.HologramBridgePlugin
 api-version: 1.13
 authors: [Chubbyduck1]
 description: A bridge between Hologram plugins
-softdepend: [HolographicDisplays, CMI, Holograms, DecentHolograms]
+softdepend: [HolographicDisplays, CMI, Holograms, DecentHolograms, FancyHolograms]

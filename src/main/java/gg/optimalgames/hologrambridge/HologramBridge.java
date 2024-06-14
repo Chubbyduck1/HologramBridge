@@ -12,10 +12,7 @@
 
 package gg.optimalgames.hologrambridge;
 
-import gg.optimalgames.hologrambridge.connector.impl.HolographicDisplaysImpl;
-import gg.optimalgames.hologrambridge.connector.impl.CMIImpl;
-import gg.optimalgames.hologrambridge.connector.impl.DecentImpl;
-import gg.optimalgames.hologrambridge.connector.impl.HologramsImpl;
+import gg.optimalgames.hologrambridge.connector.impl.*;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -77,6 +74,12 @@ public final class HologramBridge {
             this.log("Found DecentHolograms Connector");
 
             HologramAPI.setConnector(new DecentImpl());
+        }
+
+        if (this.isEnabled("FancyHolograms")) {
+            this.log("Found FancyHolograms Connector");
+
+            HologramAPI.setConnector(new FancyHologramsImpl());
         }
     }
 

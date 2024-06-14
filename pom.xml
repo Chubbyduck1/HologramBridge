@@ -75,6 +75,12 @@
             <url>https://jitpack.io</url>
         </repository>
 
+        <repository>
+            <id>fancyplugins-releases</id>
+            <name>FancyPlugins Repository</name>
+            <url>https://repo.fancyplugins.de/releases</url>
+        </repository>
+
     </repositories>
 
     <dependencies>
@@ -82,7 +88,7 @@
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
-            <version>1.17.1-R0.1-SNAPSHOT</version>
+            <version>1.19.4-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
 
@@ -135,6 +141,15 @@
             <groupId>com.github.decentsoftware-eu</groupId>
             <artifactId>decentholograms</artifactId>
             <version>${decentholograms.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--        FancyHolograms -->
+
+        <dependency>
+            <groupId>de.oliver</groupId>
+            <artifactId>FancyHolograms</artifactId>
+            <version>2.2.0</version>
             <scope>provided</scope>
         </dependency>
 
