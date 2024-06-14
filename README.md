@@ -23,6 +23,7 @@ HolographicDisplays, while supporting different plugins.
 * [CMI](https://www.spigotmc.org/resources/cmi-298-commands-insane-kits-portals-essentials-economy-mysql-sqlite-much-more.3742/)
 * [Holograms](https://www.spigotmc.org/resources/holograms.4924/)
 * [Decent Holograms](https://www.spigotmc.org/resources/decent-holograms-1-8-1-18-2-papi-support-no-dependencies.96927/)
+* [FancyHolograms](https://modrinth.com/plugin/fancyholograms/versions) (1.19-1.20)
 
 # Warning<br>
 
